@@ -96,8 +96,10 @@ function validateForm(event) {
     else if (
       filedName === "card-number" &&
       fieldValue.trim().replaceAll(" ", "").length !== 16
-    )
+    ) {
+      error = true;
       showErrorMessage(filedName, "wrongLength");
+    }
     // if the input field is one of the other digit only fields
     // and it contains anything other than a number,
     // show the wrong format message
