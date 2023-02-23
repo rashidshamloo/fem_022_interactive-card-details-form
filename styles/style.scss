@@ -1,0 +1,306 @@
+//font
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+//CSS Reset
+@import "modern-normalize.min";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+//colors
+$red: hsl(0, 100%, 66%);
+$white: hsl(0, 0%, 100%);
+$lightGrayishViolet: hsl(270, 3%, 87%);
+$darkGrayishViolet: hsl(279, 6%, 55%);
+$veryDarkViolet: hsl(278, 68%, 11%);
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  min-height: 100vh;
+  color: $veryDarkViolet;
+  background-image: url("../images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100% 13.25em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.container {
+  padding: 17em 1.5em 0.5em 1.5em;
+  position: relative;
+  max-width: 25em;
+  margin: auto;
+  .card-back {
+    width: 15.89em;
+    height: 8.78em;
+    background-image: url("../images/bg-card-back.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.4em;
+    position: absolute;
+    right: 0.9em;
+    top: 1.8em;
+    box-shadow: 0 0 2em rgba($veryDarkViolet, 0.2);
+    transition: all 250ms;
+    #cc-cvc {
+      position: absolute;
+      right: 3.5em;
+      font-size: 0.55em;
+      top: 7.37em;
+      color: $white;
+      letter-spacing: 0.1em;
+    }
+  }
+  .card-front {
+    width: 15.89em;
+    height: 8.78em;
+    background-image: url("../images/bg-card-front.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.4em;
+    position: absolute;
+    left: 0.9em;
+    top: 6.72em;
+    z-index: 1;
+    box-shadow: 0 0 2em rgba($veryDarkViolet, 0.2);
+    color: $white;
+    transition: all 250ms;
+    .cc-logo1 {
+      border-radius: 50%;
+      width: 1.6em;
+      height: 1.6em;
+      background-color: $white;
+      position: absolute;
+      top: 1em;
+      left: 1.2em;
+    }
+    .cc-logo2 {
+      border-radius: 50%;
+      width: 0.7em;
+      height: 0.7em;
+      border: 0.1em solid $white;
+      position: absolute;
+      top: 1.4em;
+      left: 3.4em;
+    }
+    #cc-number {
+      position: absolute;
+      bottom: 2.7em;
+      left: 1.2em;
+      letter-spacing: 0.125em;
+    }
+    #cc-name {
+      font-size: 0.5em;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 2em;
+      left: 2.6em;
+    }
+    #cc-exp {
+      font-size: 0.5em;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 2em;
+      right: 2.6em;
+    }
+  }
+  #success {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.5em;
+    margin-top: 1em;
+    h2 {
+      font-size: 1.5em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+    img {
+      width: 4.45em;
+      height: 4.45em;
+      margin-bottom: 0.75em;
+    }
+    p {
+      color: $darkGrayishViolet;
+    }
+    a {
+      width: 100%;
+      height: 3em;
+      border-radius: 0.5em;
+      border: none;
+      color: $white;
+      background-color: $veryDarkViolet;
+      font-size: 0.95em;
+      margin-top: 1.7em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+  }
+  #card-form {
+    .input-group-container {
+      display: flex;
+    }
+    .input-group {
+      display: inline-block;
+      width: 100%;
+      margin-top: 1.2em;
+      label {
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.7em;
+        letter-spacing: 0.1em;
+      }
+      input {
+        width: 100%;
+        height: 2.5em;
+        border: 0.1em solid $lightGrayishViolet;
+        border-radius: 0.5em;
+        padding: 0 0.8em;
+        margin-top: 0.35em;
+        &::placeholder {
+          color: darken($lightGrayishViolet, 5%);
+        }
+      }
+      & .border-error {
+        border: 0.1em solid $red;
+      }
+      #card-month {
+        width: 3.8em;
+      }
+      #card-year {
+        width: 3.8em;
+        margin-left: 0.375em;
+      }
+      .error-message {
+        color: $red;
+        font-size: 0.75em;
+        margin-top: 0.3em;
+        margin-left: 0.1em;
+        margin-right: 0.5em;
+      }
+    }
+    button {
+      width: 100%;
+      height: 3em;
+      border-radius: 0.5em;
+      border: none;
+      color: $white;
+      background-color: $veryDarkViolet;
+      font-size: 0.95em;
+      margin-top: 1.7em;
+      cursor: pointer;
+    }
+  }
+  .footer {
+    color: $veryDarkViolet;
+    margin-top: 2em;
+    font-size: 0.75em;
+    text-align: center;
+    ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.4em;
+      li {
+        padding: 0 0.5em;
+        a {
+          color: $veryDarkViolet;
+          transition: color 300ms;
+        }
+      }
+      li + li {
+        border-left: 0.1em solid $veryDarkViolet;
+      }
+    }
+  }
+}
+
+//media queries
+@media (min-width: 768px) {
+  body {
+    font-size: 1.76rem;
+    background-image: url("../images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: 35% 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    padding: 0;
+    max-width: initial;
+    .card-front {
+      top: -3em;
+      left: -3em;
+    }
+    .card-back {
+      right: initial;
+      top: 7.5em;
+      left: 0;
+    }
+    #success {
+      font-size: 1.125rem;
+      margin-left: 32em;
+      width: 21em;
+      margin-top: 0;
+    }
+    #card-form {
+      font-size: 1.125rem;
+      margin-left: 32em;
+      width: 21em;
+      > .input-group:first-child {
+        margin-top: 0;
+      }
+    }
+    .footer {
+      margin-left: 40.9em;
+      font-size: 0.5em;
+    }
+  }
+}
+@media (pointer: fine) {
+  main {
+    width: auto;
+  }
+  .container {
+    #success {
+      a:hover {
+        box-shadow: 0 0 1.5em $darkGrayishViolet;
+        background-color: lighten($veryDarkViolet, 10%);
+      }
+    }
+    #card-form {
+      button:hover {
+        box-shadow: 0 0 1.5em $darkGrayishViolet;
+        background-color: lighten($veryDarkViolet, 10%);
+      }
+    }
+    .footer {
+      ul {
+        li {
+          a:hover {
+            color: $darkGrayishViolet;
+          }
+        }
+      }
+    }
+  }
+}
