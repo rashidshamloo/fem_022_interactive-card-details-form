@@ -250,7 +250,7 @@ body {
   row-gap: 1.5em;
   margin-top: 1em;
 }
-.container #success h2 {
+.container #success h1 {
   font-size: 1.5em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
